@@ -1,5 +1,5 @@
 # CALIBRACAO-P2.4
-ste software foi desenvolvido para automatizar e digitalizar o processo de calibração técnica da aeronave H-36 (H225M). Ele substitui o método tradicional (anotações em papel e cálculos manuais) por uma interface digital de alta precisão com análise de dados histórica.
+Este software foi desenvolvido para automatizar e digitalizar o processo de calibração técnica da aeronave H-36 (H225M). Ele substitui o método tradicional (anotações em papel e cálculos manuais) por uma interface digital de alta precisão com análise de dados histórica.
 
 🛠️ O Problema vs. A Solução
 Antigamente: Os dados eram anotados em papel, calculados em calculadoras comuns e os gráficos eram traçados manualmente. Não havia armazenamento para análise de desempenho ao longo do tempo.
