@@ -9,6 +9,16 @@ import os
 import sqlite3
 from datetime import datetime
 from fpdf import FPDF  
+import os
+import sys
+
+def resource_path(relative_path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
+
+# Use assim no seu código:
+caminho_imagem = resource_path("grafico.png")
 
 class ValiseP24App:
     def __init__(self, root):

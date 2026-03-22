@@ -5,7 +5,7 @@ a = Analysis(
     ['app.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('grafico.png', '.')],
     hiddenimports=['kivy.core.window.window_sdl2', 'kivymd.stylling'],
     hookspath=[],
     hooksconfig={},
