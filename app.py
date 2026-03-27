@@ -53,20 +53,6 @@ class ValiseP24App:
                 delta_p REAL, status TEXT, qfe_local REAL, timestamp DATETIME
             )
         ''')
-        
-        cursor.execute("SELECT COUNT(*) FROM registros")
-        if cursor.fetchone()[0] == 0:
-            exemplos = [
-                ("ANV 8520", "01/10/2025", "PN-1001", "Felipe", 0.0, 0.0, 85.0, 0.88, 0.0, 95.0, 1.02, 0.01, 0.01, "APROVADO", 1013.25, "2025-10-01 10:00:00"),
-                ("ANV 8520", "01/11/2025", "PN-1001", "Felipe", 0.0, 0.0, 85.0, 0.86, 0.0, 95.0, 0.99, 0.01, 0.01, "APROVADO", 1012.00, "2025-11-01 10:00:00"),
-                ("ANV 8520", "01/12/2025", "PN-1001", "Felipe", 0.0, 0.0, 85.2, 0.84, 0.0, 95.1, 0.96, 0.01, 0.01, "APROVADO", 1015.50, "2025-12-01 10:00:00"),
-                ("ANV 8520", "01/01/2026", "PN-1001", "Felipe", 0.0, 0.0, 84.8, 0.81, 0.0, 94.8, 0.93, 0.01, 0.01, "APROVADO", 1010.00, "2026-01-01 10:00:00"),
-                ("ANV 8520", "01/02/2026", "PN-1001", "Felipe", 0.0, 0.0, 85.0, 0.78, 0.0, 95.0, 0.89, 0.01, 0.01, "REPROVADO", 1013.25, "2026-02-01 10:00:00"),
-                ("PR-ABC", "15/02/2026", "PN-2005", "Inspetor", 0.0, 0.0, 86.0, 0.92, 0.0, 96.0, 1.08, 0.02, 0.02, "APROVADO", 1018.00, "2026-02-15 14:00:00")
-            ]
-            cursor.executemany("INSERT INTO registros (anv, data_cal, pn_valise, realizador, p1_bar, p2_bar, ng1, p3_bar, p4_bar, ng2, p5_bar, p6_bar, delta_p, status, qfe_local, timestamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", exemplos)
-        conn.commit(); conn.close()
-
     def setup_ui(self):
         header = tk.Label(self.root, text="SISTEMA DE TESTE E ANÁLISE P2.4", font=("Segoe UI", 18, "bold"), bg="#2c3e50", fg="white", pady=15)
         header.pack(fill='x')
