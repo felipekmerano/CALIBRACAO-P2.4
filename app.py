@@ -8,32 +8,12 @@ import numpy as np
 import sqlite3
 from datetime import datetime
 from fpdf import FPDF  
-import os
-import sys
-
-
-def resource_path(relative_path):
-    """ Busca o arquivo na raiz do App ou dentro de _internal """
-    try:
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    # Testamos os dois caminhos possíveis onde o PyInstaller guarda assets
-    caminho_raiz = os.path.join(base_path, relative_path)
-    caminho_internal = os.path.join(base_path, "_internal", relative_path)
-
-    if os.path.exists(caminho_raiz):
-        return caminho_raiz
-    return caminho_internal
-
-
-caminho_final = resource_path("grafico.png")
+import os 
 
 class ValiseP24App:
     def __init__(self, root):
         self.root = root
-        self.root.title("SISTEMA DE CALIBRAÇÃO P2.4 - HELIBRAS/AIRBUS (FULL VERSION)")
+        self.root.title("SISTEMA DE TESTE E ANALISE P2.4 - HELIBRAS/AIRBUS (FULL VERSION)")
         self.root.geometry("1200x950") 
         self.root.configure(bg="#f4f6f9")
         
@@ -88,7 +68,7 @@ class ValiseP24App:
         conn.commit(); conn.close()
 
     def setup_ui(self):
-        header = tk.Label(self.root, text="SISTEMA DE CALIBRAÇÃO E ANÁLISE P2.4", font=("Segoe UI", 18, "bold"), bg="#2c3e50", fg="white", pady=15)
+        header = tk.Label(self.root, text="SISTEMA DE TESTE E ANÁLISE P2.4", font=("Segoe UI", 18, "bold"), bg="#2c3e50", fg="white", pady=15)
         header.pack(fill='x')
 
         self.nb = ttk.Notebook(self.root)
@@ -102,7 +82,7 @@ class ValiseP24App:
         self.nb.add(self.tab4, text=" 🎯 DISPERSÃO ")
         self.nb.add(self.tab5, text=" 📉 TENDÊNCIA ")
         
-        # Criação dos widgets primeiro 
+        # Criação dos widgets 
         self.create_widgets()
         self.create_history_widgets()
         self.create_dispersion_widgets()
